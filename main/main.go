@@ -169,9 +169,9 @@ func runPublisher(startwg, donewg *sync.WaitGroup, url string, opts []nats.Optio
 	var msg []byte
 	if msgSize > 0 {
 		//msg = make([]byte, msgSize)
-		msg = []byte(`{"_id":{"$oid":"5f9ce732e199a148ddb4f334"},"header":{"topic":"KMQ-Bench","channel":"KMQ-Bench","attempts":0,"delaynano":{"$numberLong":"0"},"timestampnano":{"$numberLong":"1604118322545733000"},"requestid":"","spancontext":"","producetimestampnano":{"$numberLong":"0"},"requeuemode":0,"extras":null,"extractxstr":null,"extractxint":null,"xxx_nounkeyedliteral":{},"xxx_sizecache":0},"data":"aaaaaaaaaa"}`)
+		msg = []byte{10,10,97,97,97,97,97,97,97,97,97,97,18,30,10,8,75,77,81,45,84,101,115,116,18,8,75,77,81,45,84,101,115,116,40,208,190,196,190,188,218,145,162,22}
 	}
-	published := 0
+	published:=0
 	start := time.Now()
 
 	if !sync {
