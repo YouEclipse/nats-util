@@ -10,3 +10,4 @@ FROM golang:1.15.3
 
 COPY --from=builder /tmp/stan-*  /usr/bin/
 
+CMD [ "/bin/bash","-c","while true; do echo running; sleep 1; done"]
